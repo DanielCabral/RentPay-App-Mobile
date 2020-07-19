@@ -2,12 +2,13 @@ import React,{useEffect, useState} from 'react';
 import {Feather} from '@expo/vector-icons';
 import { useNavigation} from '@react-navigation/native';
 import {View , FlatList, Image, Text, TouchableOpacity} from 'react-native';
+//import { Toolbar as MaterialToolbar } from 'react-native-material-design';
 
 import logoImg from '../../assets/Logo.png';
 import api from '../../services/api';
 import styles from './styles';
 
-export default function Incidents(){
+export default function Incidents() {
 
     const [incidents, setIncidents] = useState([]); 
     const [total, setTotal] = useState(0);
@@ -47,6 +48,7 @@ export default function Incidents(){
 
     return (
         <View style ={styles.container}>
+            
             <View style = {styles.header}>
                 <Image source={logoImg} styles={styles.headerImage}/>
             </View>
