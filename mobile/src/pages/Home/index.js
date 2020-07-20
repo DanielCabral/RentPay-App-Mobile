@@ -53,6 +53,7 @@ export default function Incidents() {
                 <Image source={logoImg} styles={styles.headerImage}/>
             </View>
 
+            
             <Text style = {styles.title}>Bem-vindo Ao Rent Pay</Text>
             <Text style = {styles.description}>Escolha um dos casos abaixo e salve o dia.</Text>
 
