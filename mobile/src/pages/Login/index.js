@@ -5,7 +5,7 @@ import {View , FlatList, Image, Text, TouchableOpacity, TextInput, Button, input
 //import { Toolbar as MaterialToolbar } from 'react-native-material-design';
 
 import logoImg from '../../assets/Logo.png';
-import styles from './styles';
+//import styles from './styles';
 //import api from '../../services/api';
 
 
@@ -15,9 +15,29 @@ export default function Login() {
 
     const navigation = useNavigation();
 
-    function navigateToHome(incident){
+    const styles = StyleSheet.create({
+        labelContainer: {
+            marginBottom: 20
+        },
+        container: {
+            flex: 1,
+            paddingHorizontal: 24,
+            paddingTop: Constants.statusBarHeight + 20,
+        },
+        header: {
+            flexDirection: 'row',
+            justifyContent: 'space-between',
+            alignItems: 'center',
+            backgroundColor: '#14213D',
+        },
+        headerImage: {
+            width: '70%',
+            backgroundColor: '#14213D',
+        },
+    });
+   // function navigateToHome(incident){
         //navigation.navigate('Detail', {incident});
-    }
+    //}
 
     return (
         <View style ={styles.container}>
@@ -31,25 +51,25 @@ export default function Login() {
                 <TextInput >Digite o email</TextInput>
                 <TextInput
                 style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                onChangeText={()=>(email)}
+                onChangeText={(text)=>(setEmail(text))}
                 value={value}
                 /> 
                 <TextInput
                 style={{ height: 40, borderColor: 'gray', borderWidth: 1 }}
-                onChangeText={()=>(senha)}
+                onChangeText={(text)=>(setSenha(text))}
                 value={value}
                 />
-                <TouchableOpacity onPress={() => navigateToDetail(incident)}>
+                <TouchableOpacity>
                     <Text>Logar</Text>
                     <Feather name="arrow-right" size={16} color="#e02041" />
                 </TouchableOpacity>
             </View>           
         </View>
+
+        
+
     );
-    const styles2 = StyleSheet.create({
-        labelContainer: {
-            marginBottom: 20
-        }
-    });
+    
 }
+
 
